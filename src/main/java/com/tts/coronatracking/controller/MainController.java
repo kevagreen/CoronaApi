@@ -22,4 +22,10 @@ public class MainController {
         model.addAttribute("StateStats", coronaData.getStatList());
         return "stats";
     }
+    @GetMapping(path = "/surveys")
+    public String survey(Model model) {
+        model.addAttribute("survey", "TEST");
+        return "surveys";
+    }
+
 }
