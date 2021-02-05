@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID Tracker By State</title>
+</head>
+<body>
+<p data-th-text="${statsByState}"></p>
+
+<table>
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Cases Reported</th>
+        <th>Deaths</th>
+        <th>Recoveries</th>
+    </tr>
+    </tr>
+    <tr th:each="StateStat : ${StateStats}">
+        <td th:text="${StateStat.state}"></td>
+        <td th:text="${StateStat.country}"></td>
+        <td th:text="${StateStat.updatedCases}">0</td>
+        <td th:text="${StateStat.deaths}"></td>
+        <td th:text="${StateStat.recoveries}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
